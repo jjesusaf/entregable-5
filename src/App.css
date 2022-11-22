@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+}
+
+.pokemons{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+#imgpokemon{
+    width: 162px;
+    height: 149px;  
+}
+
+.pokemonCard{
+    width: 261px;
+    height: 383px;
+    padding: 1rem;
+    border-radius: 4px 4px 0px 0px;
+    background: linear-gradient(181.51deg, #735259 -6.44%, #BC6B7C 121.95%, #7C3F4C 186.11%);
+}
+
+.pokemonCh{
+    background: #FFFFFF;
+    border-radius: 4px;
+}

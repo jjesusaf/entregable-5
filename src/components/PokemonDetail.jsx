@@ -45,8 +45,8 @@ const PokemonDetail = () => {
             </div>
             <div>
                 Movements:
-                {pokemon.moves.map(move => (
-                    <ul>
+                {pokemon?.moves?.map(move => (
+                    <ul key={move.move.name}>
                         <li>
                            {move.move.name} 
                         </li>

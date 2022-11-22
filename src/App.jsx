@@ -11,7 +11,6 @@ function App() {
   return (
     <div className="App">
       <HashRouter>
-        <Link to='/'>Home</Link>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route element={<ProtectedRoutes />}>

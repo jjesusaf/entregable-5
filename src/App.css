@@ -6,6 +6,41 @@ body{
     height: auto;
 }
 
+.home{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content:center ;
+
+}
+
+.poke-home{
+    text-align: center;
+}
+
+.svg-home{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-content: flex-end;
+
+}
+.footer{
+    padding-top: 10rem;
+}
+
+.poke-home>h1{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 61px;
+    color: #FE1936;
+
+    
+}
+
+
 .pokemons{
     display: flex;
     flex-wrap: wrap;

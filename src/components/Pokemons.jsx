@@ -106,7 +106,7 @@ const Pokemons = () => {
                 Prev Page
             </button>
             {numbers.map(number =>(
-                <button onClick={()=> setPage(number)}>{number}</button>
+                <button onClick={()=> setPage(number)} key={number}>{number}</button>
             ))}
             <button 
             onClick={() => setPage(page+1)}

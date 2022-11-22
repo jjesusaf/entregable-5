@@ -29,6 +29,7 @@ const Home = () => {
                     type="text"
                     onChange={e => setUserName(e.target.value)}
                     value={userName}
+                    placeholder="Your name"
                 />
                 <button onClick={enterName}>
                     Comenzar

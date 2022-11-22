@@ -36,8 +36,28 @@ body{
     font-size: 50px;
     line-height: 61px;
     color: #FE1936;
+}
 
-    
+.poke-home>h2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 30px;
+    color: #302F2F;
+}
+
+.poke-home>input{
+    background: #FFFFFF;
+    width: 662px;
+    height: 68px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.poke-home>button{
+    background: #D93F3F;
+    width: 209.21px;
+    height: 68px;
 }
 
 

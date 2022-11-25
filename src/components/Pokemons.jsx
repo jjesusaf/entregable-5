@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import PokemonCard from './PokemonCard';
 import Pagination from 'react-bootstrap/Pagination';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 const Pokemons = () => {
 
@@ -76,21 +78,25 @@ const Pokemons = () => {
             <h1>
                 Bienvenido {userName}, aquí podrás encontrar tu pokemón favorito
             </h1>
-            <div>
-                <input
-                    type="text"
-                    placeholder='search pokemon'
-                    onChange={e => setPokemonName(e.target.value)}
-                    value={pokemonName}
-                />
-                <button onClick={searchPokemon}>
-                    Search
-                </button>
-                <select onChange={filterType} name="" id="">
+            <div className='search'>
+                <InputGroup size="lg">
+                    <InputGroup.Text id="inputGroup-sizing-lg"
+                    onClick={searchPokemon}>Search</InputGroup.Text>
+                    <Form.Control
+                        type="text"
+                        placeholder='search pokemon'
+                        onChange={e => setPokemonName(e.target.value)}
+                        value={pokemonName}
+                        aria-label="Large"
+                        aria-describedby="inputGroup-sizing-sm"
+                    />
+                </InputGroup>
+                <Form.Select aria-label="Default select example" onChange={filterType} name="" id="">
+                    <option>Open this select menu</option>
                     {types.map(type => (
                         <option value={type.url} key={type.name}>{type.name}</option>
                     ))}
-                </select>
+                </Form.Select>
             </div>
             <div className='pokemons'>
                 {pokemonPaginated.map(pokemon => (

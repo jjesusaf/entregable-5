@@ -102,3 +102,7 @@ body{
     padding: 2rem;
     gap: 1rem;
 }
+
+.pokecard{
+    background-image: linear-gradient(to right top, #f0c6de, #e9c9e5, #e1cceb, #d8d0ee, #d1d3f0, #c9d4ee, #c4d5ea, #c0d5e5, #bdd2dc, #bccfd4, #bdcbcc, #bec7c6);
+}

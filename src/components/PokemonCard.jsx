@@ -15,7 +15,7 @@ const PokemonCard = ({ url }) => {
 
     return (
         <Link to={`/pokemons/${pokemon.id}`}>
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '18rem' }} className='pokecard'>
                 <Card.Img variant="top" src={pokemon.sprites?.other?.home?.front_default} />
                 <Card.Body>
                     <Card.Title>{pokemon.name}</Card.Title>

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 const PokemonDetail = () => {
 
@@ -42,13 +43,16 @@ const PokemonDetail = () => {
             </div>
             <div>
                 Stats: <br />
+                {pokemon.stats?.map(stat => (
+                    <ProgressBar key={stat.stat?.url} striped variant="success" now={stat.base_stat} />
+                ))}
             </div>
             <div>
                 Movements:
                 {pokemon?.moves?.map(move => (
                     <ul key={move.move.name}>
                         <li>
-                           {move.move.name} 
+                            {move.move.name}
                         </li>
                     </ul>
                 ))}

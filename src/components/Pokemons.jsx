@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import PokemonCard from './PokemonCard';
+import Pagination from 'react-bootstrap/Pagination';
 
 const Pokemons = () => {
 
@@ -10,7 +11,7 @@ const Pokemons = () => {
     const [dataPokemons, setDataPokemons] = useState([])
     const [pokemonName, setPokemonName] = useState("")
     const [types, setTypes] = useState([])
-    
+
 
     useEffect(() => {
         axios.get(`https://pokeapi.co/api/v2/type/`)
@@ -34,17 +35,17 @@ const Pokemons = () => {
             .then(res => setDataPokemons(res.data.pokemon))
     }
 
-    
+
     const [page, setPage] = useState(1)
     const pokemonsPerPages = 20
     const lastIndex = page * pokemonsPerPages
-    const firtsIndex = lastIndex - pokemonsPerPages 
+    const firtsIndex = lastIndex - pokemonsPerPages
     const pokemonPaginated = dataPokemons.slice(firtsIndex, lastIndex)
     const totalPages = Math.ceil(dataPokemons.length / pokemonsPerPages)
 
-    const numbers =[]
+    const numbers = []
 
-    for(let i = 1; i <= totalPages; i++){
+    for (let i = 1; i <= totalPages; i++) {
         numbers.push(i)
     }
 
@@ -99,21 +100,19 @@ const Pokemons = () => {
                     />
                 ))}
             </div>
-            <button 
-            onClick={()=> setPage(page -1)}
-            disabled ={page === 1}
-            >
-                Prev Page
-            </button>
-            {numbers.map(number =>(
-                <button onClick={()=> setPage(number)} key={number}>{number}</button>
-            ))}
-            <button 
-            onClick={() => setPage(page+1)}
-            disabled={page === totalPages}
-            >
-                Next Page
-            </button>
+            <Pagination className='pagination'>
+                <Pagination.Prev
+                    onClick={() => setPage(page - 1)}
+                    disabled={page === 1}
+                />
+                {numbers.map(number => (
+                    <Pagination.Item onClick={() => setPage(number)} key={number}>{number}</Pagination.Item>
+                ))}
+                <Pagination.Next
+                    onClick={() => setPage(page + 1)}
+                    disabled={page === totalPages}
+                />
+            </Pagination>
         </div>
     );
 };

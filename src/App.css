@@ -66,6 +66,7 @@ body{
     flex-wrap: wrap;
     text-align: center;
     justify-content: space-evenly;
+    gap: 1rem;
 }
 
 #imgpokemon{
@@ -84,4 +85,13 @@ body{
 .pokemonCh{
     background: #FFFFFF;
     border-radius: 4px;
+    padding-bottom: 0.5rem;
+}
+
+.pagination{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
 }
